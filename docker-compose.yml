@@ -1,30 +1,10 @@
 version: '3.8'
 
 services:
-  # Selenium Chrome 浏览器（如果 vg-web 已有 selenium 容器且端口 4444 可用，可以不启动这个，直接复用）
-  vgai-selenium:
-    image: selenium/standalone-chrome:latest
-    container_name: vgai-selenium
-    ports:
-      - "4445:4444"
-      - "7901:7900"       # noVNC 可视化调试: http://NAS_IP:7901 密码 secret
-    shm_size: '2gb'
-    environment:
-      - SE_NODE_MAX_SESSIONS=3
-      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
-      - SE_SCREEN_WIDTH=1920
-      - SE_SCREEN_HEIGHT=1080
-    restart: unless-stopped
-
-  # 测试执行容器
   vgai-test:
     build: .
     container_name: vgai-test
-    depends_on:
-      - vgai-selenium
-    environment:
-      - SELENIUM_HUB_URL=http://vgai-selenium:4444/wd/hub
     volumes:
       - ./reports:/app/reports
       - ./logs:/app/logs
-    restart: "no"
+    restart: unless-stopped

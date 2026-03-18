@@ -32,9 +32,17 @@ class DriverManager:
         with open(config_path, 'r', encoding='utf-8') as f:
             self.config = json.load(f)
 
+    def _is_docker(self):
+        """判断是否在 Docker 容器中运行"""
+        return os.path.exists('/.dockerenv') or os.environ.get('DOCKER_CONTAINER') == '1'
+
     def _build_chrome_options(self):
         """构建 Chrome 优化选项"""
         chrome_options = webdriver.ChromeOptions()
+
+        # Docker 容器内必须 headless
+        if self._is_docker():
+            chrome_options.add_argument('--headless=new')
 
         # 基础性能优化
         chrome_options.add_argument('--no-sandbox')
