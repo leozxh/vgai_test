@@ -1,0 +1,33 @@
+# Python 缓存/字节码
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 虚拟环境
+.venv/
+venv/
+env/
+ENV/
+
+# IDE/编辑器
+.vscode/
+.idea/
+*.code-workspace
+
+# 操作系统杂项
+.DS_Store
+Thumbs.db
+
+# 日志与报告（保留空目录，忽略文件）
+logs/*
+!logs/.gitkeep
+reports/*
+!reports/.gitkeep
+
+# 截图/运行产物
+screenshots/**
+*.log
+*.tmp
+
+# pytest 缓存
+.pytest_cache/

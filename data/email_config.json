@@ -1,0 +1,9 @@
+{
+    "host": "smtp.qq.com",
+    "port": 465,
+    "user": "3331067370@qq.com",
+    "password": "dbrnvplrradqciif",
+    "to_addrs": [
+        "zhaxuanhuan@163.com"
+    ]
+}
