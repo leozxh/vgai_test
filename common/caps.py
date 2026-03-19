@@ -185,7 +185,7 @@ class DriverManager:
         return self.init_driver("test", '访问测试环境，页面加载中')
 
     def dev_caps(self):
-        return self.init_driver("dev", '访问正式环境，页面加载中')
+        return self.init_driver("dev", '访问开发环境，页面加载中')
 
     def prod_caps(self):
         return self.init_driver("prod", '访问生产环境，页面加载中')
