@@ -126,6 +126,10 @@ class DriverManager:
                 command_executor=hub_url,
                 options=chrome_options
             )
+        elif self._is_docker():
+            # Docker 环境下直接用 Selenium 内置驱动管理
+            logging.info("Docker 环境，使用 Selenium 内置驱动管理")
+            driver = webdriver.Chrome(service=Service(), options=chrome_options)
         else:
             # 使用本地WebDriver
             logging.info("使用本地Chrome驱动")
