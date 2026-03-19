@@ -44,6 +44,11 @@ class DriverManager:
         if self._is_docker():
             chrome_options.add_argument('--headless=new')
 
+        # 从环境变量读取代理配置
+        proxy = os.environ.get('HTTPS_PROXY') or os.environ.get('HTTP_PROXY')
+        if proxy:
+            chrome_options.add_argument(f'--proxy-server={proxy}')
+
         # 基础性能优化
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
