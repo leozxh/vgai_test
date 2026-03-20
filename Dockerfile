@@ -10,6 +10,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -f /tmp/chrome.deb \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# 设置时区为中国标准时间
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo "Asia/Shanghai" > /etc/timezone
+
 WORKDIR /app
 
 # 安装 Python 依赖
