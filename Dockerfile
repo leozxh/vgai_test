@@ -1,18 +1,20 @@
 FROM python:3.11-slim
 
-# 安装 Chrome 浏览器 + 依赖
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    wget gnupg2 curl unzip \
-    libglib2.0-0 libnspr4 libnss3 libdbus-1-3 libxcb1 \
-    && wget -q -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
-    && apt-get install -y /tmp/chrome.deb || true \
-    && apt-get install -y -f \
-    && rm -f /tmp/chrome.deb \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
-
 # 设置时区为中国标准时间
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone
+
+# 安装 Chrome 浏览器 + 依赖
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+       wget gnupg2 curl unzip \
+       libglib2.0-0 libnspr4 libnss3 libdbus-1-3 libxcb1 \
+    && wget -q -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
+    && apt-get install -y /tmp/chrome.deb \
+    && apt-get install -y -f \
+    && rm -f /tmp/chrome.deb \
+    && apt-get clean && rm -rf /var/lib/apt/lists/* \
+    && google-chrome --version
 
 WORKDIR /app
 
