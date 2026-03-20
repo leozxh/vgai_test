@@ -31,3 +31,4 @@ screenshots/**
 
 # pytest 缓存
 .pytest_cache/
+.wdm/

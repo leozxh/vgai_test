@@ -46,31 +46,23 @@ class I2VView(ImageToVideo):
         try:
             logging.info('选择 Inspiration 模板...')
 
-            # 方式1: 查找 Try_a_sample 图片
-            templates = self.driver.find_elements(By.CSS_SELECTOR, 'img[src*="Try_a_sample"]')
-            if templates:
-                template = templates[0]
-                self.driver.execute_script("arguments[0].scrollIntoView(true);", template)
-                time.sleep(0.5)
-                try:
-                    template.click()
-                except Exception:
-                    self.driver.execute_script("arguments[0].click();", template)
-                logging.info('已选择 Inspiration 模板图片 (Try_a_sample)')
-                time.sleep(3)
-                return True
-
-            # 方式2: 查找 Inspiration 区域内的 cdn 图片
-            logging.info('未找到 Try_a_sample 图片，尝试其他模板...')
+            # 查找 Inspiration 面板中第一个可见的模板图片
             all_imgs = self.driver.find_elements(By.TAG_NAME, 'img')
             for img in all_imgs:
-                if img.is_displayed() and img.size.get('width', 0) > 80:
+                try:
+                    if not img.is_displayed() or img.size.get('width', 0) < 80:
+                        continue
                     src = img.get_attribute('src') or ''
-                    if 'cdn.visiva.ai' in src and ('sample' in src.lower() or 'i2v' in src.lower()):
-                        self.driver.execute_script("arguments[0].click();", img)
-                        logging.info(f'已点击模板图片: {src[:80]}')
-                        time.sleep(3)
-                        return True
+                    if not src or 'logo' in src.lower() or 'icon' in src.lower() or 'avatar' in src.lower():
+                        continue
+                    self.driver.execute_script("arguments[0].scrollIntoView(true);", img)
+                    time.sleep(0.5)
+                    self.driver.execute_script("arguments[0].click();", img)
+                    logging.info(f'已选择第一个 Inspiration 模板: {src[:80]}')
+                    time.sleep(3)
+                    return True
+                except Exception:
+                    continue
 
             logging.warning('未找到可用的 Inspiration 模板')
             return False

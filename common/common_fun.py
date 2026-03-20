@@ -340,12 +340,17 @@ document.getElementById('toggleLogBtn').addEventListener('click', function() {{
             matches = test_result_pattern.findall(content)
 
             if matches:
+                results_dict = {}
                 for match in matches:
-                    test_num = int(match[0])
+                    test_method_name = match[1]
                     result_status = match[3]
-                    test_name = test_case_names.get(test_num, f"test_{test_num}")
+                    num_match = re.match(r'test_(\d+)_', test_method_name)
+                    test_num = int(num_match.group(1)) if num_match else 0
+                    test_name = test_case_names.get(test_num, test_method_name)
                     status_emoji = {'成功': '✅', '失败': '❌', '错误': '⚠️', '跳过': '⏭️'}.get(result_status, '❓')
-                    test_details.append(f"{test_name} - {status_emoji}")
+                    results_dict[test_num] = f"{test_name} - {status_emoji}"
+                for num in sorted(results_dict.keys()):
+                    test_details.append(results_dict[num])
             else:
                 for i in range(1, total_tests + 1):
                     test_name = test_case_names.get(i, f"test_{i}")
