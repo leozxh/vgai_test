@@ -30,7 +30,7 @@ class AppPageTest(unittest.TestCase):
     def tearDown(self):
         logging.info('Test case execution completed')
 
-    def test_1_app_load(self):
+    def test_01_app_load(self):
         """主页面加载测试"""
         logging.info('开始主页面加载测试')
         self.app_view.go_to_app()
@@ -38,7 +38,7 @@ class AppPageTest(unittest.TestCase):
         self.assertTrue(self.app_view.is_main_heading_visible(), "应显示 Visiva.AI 主标题")
         logging.info('主页面加载测试完成')
 
-    def test_2_features_display(self):
+    def test_02_features_display(self):
         """功能入口显示测试"""
         logging.info('开始功能入口显示测试')
         self.app_view.go_to_app()
@@ -46,14 +46,14 @@ class AppPageTest(unittest.TestCase):
                         "应显示 Image to Video、Text to Video、Video Extend、AI Effects 四个入口")
         logging.info('功能入口显示测试完成')
 
-    def test_3_hot_templates_display(self):
+    def test_03_hot_templates_display(self):
         """Hot Templates 区域测试"""
         logging.info('开始 Hot Templates 区域测试')
         self.app_view.go_to_app()
         self.assertTrue(self.app_view.is_hot_templates_visible(), "应显示 Hot Templates 区域")
         logging.info('Hot Templates 区域测试完成')
 
-    def test_4_upgrade_terms_display(self):
+    def test_04_upgrade_terms_display(self):
         """Upgrade 和 Terms 链接测试"""
         logging.info('开始 Upgrade/Terms 链接测试')
         self.app_view.go_to_app()
@@ -61,7 +61,7 @@ class AppPageTest(unittest.TestCase):
         self.assertTrue(self.app_view.is_terms_visible(), "应显示 Terms 链接")
         logging.info('Upgrade/Terms 链接测试完成')
 
-    def test_5_nav_image_to_video(self):
+    def test_05_nav_image_to_video(self):
         """Image to Video 导航测试"""
         logging.info('开始 Image to Video 导航测试')
         self.app_view.go_to_app()
@@ -69,7 +69,7 @@ class AppPageTest(unittest.TestCase):
         self.assertTrue(result, "Image to Video 页面跳转失败")
         logging.info('Image to Video 导航测试完成')
 
-    def test_6_nav_text_to_video(self):
+    def test_06_nav_text_to_video(self):
         """Text to Video 导航测试"""
         logging.info('开始 Text to Video 导航测试')
         self.app_view.go_to_app()
@@ -77,7 +77,7 @@ class AppPageTest(unittest.TestCase):
         self.assertTrue(result, "Text to Video 页面跳转失败")
         logging.info('Text to Video 导航测试完成')
 
-    def test_7_nav_video_extend(self):
+    def test_07_nav_video_extend(self):
         """Video Extend 导航测试"""
         logging.info('开始 Video Extend 导航测试')
         self.app_view.go_to_app()
@@ -85,7 +85,7 @@ class AppPageTest(unittest.TestCase):
         self.assertTrue(result, "Video Extend 页面跳转失败")
         logging.info('Video Extend 导航测试完成')
 
-    def test_8_nav_ai_effects(self):
+    def test_08_nav_ai_effects(self):
         """AI Effects 导航测试"""
         logging.info('开始 AI Effects 导航测试')
         self.app_view.go_to_app()
@@ -93,7 +93,7 @@ class AppPageTest(unittest.TestCase):
         self.assertTrue(result, "AI Effects 页面跳转失败")
         logging.info('AI Effects 导航测试完成')
 
-    def test_9_nav_terms(self):
+    def test_09_nav_terms(self):
         """Terms 页面导航测试"""
         logging.info('开始 Terms 页面导航测试')
         self.app_view.go_to_app()

@@ -314,15 +314,15 @@ document.getElementById('toggleLogBtn').addEventListener('click', function() {{
 
             # 定义测试用例名称映射
             test_case_names = {
-                1: "test_1_app_load - 主页面加载测试",
-                2: "test_2_features_display - 功能入口显示测试",
-                3: "test_3_hot_templates - Hot Templates测试",
-                4: "test_4_upgrade_terms - Upgrade/Terms测试",
-                5: "test_5_nav_image_to_video - Image to Video导航",
-                6: "test_6_nav_text_to_video - Text to Video导航",
-                7: "test_7_nav_video_extend - Video Extend导航",
-                8: "test_8_nav_ai_effects - AI Effects导航",
-                9: "test_9_nav_terms - Terms页面导航",
+                1: "test_01_app_load - 主页面加载测试",
+                2: "test_02_features_display - 功能入口显示测试",
+                3: "test_03_hot_templates - Hot Templates测试",
+                4: "test_04_upgrade_terms - Upgrade/Terms测试",
+                5: "test_05_nav_image_to_video - Image to Video导航",
+                6: "test_06_nav_text_to_video - Text to Video导航",
+                7: "test_07_nav_video_extend - Video Extend导航",
+                8: "test_08_nav_ai_effects - AI Effects导航",
+                9: "test_09_nav_terms - Terms页面导航",
                 10: "test_10_login - 登录功能测试",
                 11: "test_11_i2v_inspiration_generate - 图生视频模板生成测试",
             }
