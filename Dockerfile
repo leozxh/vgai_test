@@ -4,18 +4,11 @@ FROM python:3.11-slim
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone
 
-# 安装 Chrome 浏览器（直接下载 deb 包，避免 GPG key 问题）
+# 安装 Chromium 浏览器（从 Debian 官方源安装，无需访问 Google）
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends wget curl unzip fonts-liberation \
-       libasound2t64 libatk-bridge2.0-0 libatk1.0-0 libcups2 libdbus-1-3 \
-       libdrm2 libgbm1 libgtk-3-0 libnspr4 libnss3 libxcomposite1 \
-       libxdamage1 libxrandr2 xdg-utils \
-    && curl -fsSL -o /tmp/google-chrome.deb \
-       https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
-    && apt-get install -y /tmp/google-chrome.deb \
-    && rm /tmp/google-chrome.deb \
+    && apt-get install -y --no-install-recommends chromium chromium-driver \
     && apt-get clean && rm -rf /var/lib/apt/lists/* \
-    && google-chrome --version
+    && chromium --version
 
 WORKDIR /app
 
