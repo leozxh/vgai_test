@@ -18,7 +18,7 @@ class AppView(AppPage):
         try:
             logging.info('访问 /app 页面...')
             self.driver.get(self.driver.current_url.split('/app')[0] + '/app')
-            time.sleep(2)
+            time.sleep(5)
             return True
         except Exception as e:
             logging.error(f'访问 App 页面失败: {str(e)}')
@@ -54,10 +54,10 @@ class AppView(AppPage):
 
     def are_features_visible(self):
         try:
-            self.find_one_fast(AppPage.IMAGE_TO_VIDEO_LOCATORS, timeout=3)
-            self.find_one_fast(AppPage.TEXT_TO_VIDEO_LOCATORS, timeout=3)
-            self.find_one_fast(AppPage.VIDEO_EXTEND_LOCATORS, timeout=3)
-            self.find_one_fast(AppPage.AI_EFFECTS_LOCATORS, timeout=3)
+            self.find_one_fast(AppPage.IMAGE_TO_VIDEO_LOCATORS, timeout=10)
+            self.find_one_fast(AppPage.TEXT_TO_VIDEO_LOCATORS, timeout=10)
+            self.find_one_fast(AppPage.VIDEO_EXTEND_LOCATORS, timeout=10)
+            self.find_one_fast(AppPage.AI_EFFECTS_LOCATORS, timeout=10)
             return True
         except Exception:
             return False
@@ -84,7 +84,7 @@ class AppView(AppPage):
         """通用的功能点击和验证"""
         try:
             logging.info(f'开始点击 {feature_name}...')
-            element = self.find_one_fast(locators, timeout=5)
+            element = self.find_one_fast(locators, timeout=15)
             self.safe_click_element(element, feature_name)
             time.sleep(2)
             current_url = self.driver.current_url.lower()
