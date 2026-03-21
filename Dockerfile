@@ -6,12 +6,13 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 
 # 安装 Chrome 浏览器 + 依赖
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-       wget gnupg2 curl unzip \
-       libglib2.0-0 libnspr4 libnss3 libdbus-1-3 libxcb1 \
-    && wget -q -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
-    && dpkg -i /tmp/chrome.deb; apt-get install -y -f \
-    && rm -f /tmp/chrome.deb \
+    && apt-get install -y --no-install-recommends wget gnupg2 curl unzip \
+    && wget -q -O - https://dl.google.com/linux/linux_signing_key.pub \
+       | gpg --dearmor -o /usr/share/keyrings/google-chrome.gpg \
+    && echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" \
+       > /etc/apt/sources.list.d/google-chrome.list \
+    && apt-get update \
+    && apt-get install -y google-chrome-stable \
     && apt-get clean && rm -rf /var/lib/apt/lists/* \
     && google-chrome --version
 
