@@ -7,7 +7,7 @@ PROJECT_ROOT = os.path.normpath(os.path.join(CURRENT_DIR, '..'))
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
-from common.common_fun import ReportManager
+from common.common_fun import ReportManager  # noqa: E402
 
 logger = logging.getLogger(__name__)
 
@@ -29,9 +29,9 @@ def test_report():
         logger.info("4. 运行测试...")
         test_success = False
         try:
-            report_manager.run_tests(runner)
+            run_result = report_manager.run_tests(runner)
             logger.info("4.1 测试运行完成")
-            test_success = True
+            test_success = bool(run_result is not None and report_manager.last_run_success)
         except Exception as e:
             logger.error(f"4.1 测试运行失败: {str(e)}")
             test_success = False

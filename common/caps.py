@@ -18,6 +18,62 @@ try:
 except ImportError:
     HAS_WEBDRIVER_MANAGER = False
 
+
+def _strip_stale_chromedriver_dirs_from_path():
+    """
+    从 PATH 中移除常见旧版 chromedriver 目录（如 D:\\webdriver\\bin），
+    否则 Selenium 会优先使用 PATH 中的 109 等旧驱动，与当前 Chrome 不匹配导致无法启动。
+    """
+    path_var = os.environ.get("PATH", "")
+    if not path_var:
+        return
+    sep = os.pathsep
+    parts = []
+    for p in path_var.split(sep):
+        if not p:
+            continue
+        norm = p.replace("/", "\\").lower()
+        if "webdriver\\bin" in norm or norm.endswith("webdriver\\bin"):
+            logging.info("从 PATH 中移除此目录（避免旧版 chromedriver 与 Chrome 版本冲突）: %s", p)
+            continue
+        parts.append(p)
+    os.environ["PATH"] = sep.join(parts)
+
+
+def _resolve_local_chrome_service():
+    """
+    解析本地 Chrome Service：优先 webdriver-manager，其次 Selenium 内置管理（需 PATH 无旧驱动）。
+    """
+    service = None
+    if HAS_WEBDRIVER_MANAGER:
+        try:
+            driver_path = ChromeDriverManager().install()
+            logging.info("使用 webdriver-manager 提供的 ChromeDriver: %s", driver_path)
+            return Service(driver_path)
+        except Exception as wdm_err:
+            logging.warning("webdriver-manager 获取失败: %s", wdm_err)
+            import glob
+            wdm_root = os.path.join(os.path.expanduser("~"), ".wdm", "drivers", "chromedriver")
+            candidates = []
+            if os.path.isdir(wdm_root):
+                candidates = glob.glob(os.path.join(wdm_root, "**", "chromedriver.exe"), recursive=True)
+                if not candidates:
+                    candidates = glob.glob(os.path.join(wdm_root, "**", "chromedriver"), recursive=True)
+            if candidates:
+                cached_path = sorted(candidates)[-1]
+                logging.info("使用 webdriver-manager 缓存的 ChromeDriver: %s", cached_path)
+                return Service(cached_path)
+
+    if not HAS_WEBDRIVER_MANAGER:
+        logging.warning(
+            "未安装 webdriver-manager，建议执行: pip install webdriver-manager "
+            "（可自动匹配与 Chrome 版本一致的 ChromeDriver）"
+        )
+    _strip_stale_chromedriver_dirs_from_path()
+    logging.info("使用 Selenium 内置驱动解析（Service()）")
+    return Service()
+
+
 log_file_path = path.join(path.dirname(path.abspath(__file__)), '../config/log.conf')
 log_path = path.normpath(path.join(path.dirname(path.abspath(__file__)), '../logs/runlog.txt'))
 log_path_for_config = log_path.replace('\\', '/')
@@ -83,7 +139,7 @@ class DriverManager:
 
         # 内存和CPU优化
         chrome_options.add_argument('--memory-pressure-off')
-        chrome_options.add_argument('--max_old_space_size=4096')
+        # 注意：max_old_space_size 为 Node/V8 参数，非 Chrome 合法参数，会导致部分环境启动异常，已移除
 
         # 实验性功能优化
         chrome_options.add_argument('--enable-features=NetworkService,NetworkServiceInProcess')
@@ -131,29 +187,17 @@ class DriverManager:
             logging.info("Docker 环境，使用 Selenium 内置驱动管理")
             driver = webdriver.Chrome(service=Service(), options=chrome_options)
         else:
-            # 使用本地WebDriver
-            logging.info("使用本地Chrome驱动")
-            service = None
-            if HAS_WEBDRIVER_MANAGER:
-                try:
-                    service = Service(ChromeDriverManager().install())
-                except Exception as wdm_err:
-                    logging.warning(f"webdriver-manager 在线获取失败: {wdm_err}")
-                    # 尝试从 webdriver-manager 缓存目录中查找可用的 chromedriver
-                    import glob
-                    wdm_cache = os.path.expanduser("~/.wdm/drivers/chromedriver")
-                    candidates = glob.glob(os.path.join(wdm_cache, "**", "chromedriver.exe"), recursive=True)
-                    if not candidates:
-                        candidates = glob.glob(os.path.join(wdm_cache, "**", "chromedriver"), recursive=True)
-                    if candidates:
-                        cached_path = candidates[-1]  # 取最新版本
-                        logging.info(f"使用缓存的 ChromeDriver: {cached_path}")
-                        service = Service(cached_path)
-                    else:
-                        logging.warning("未找到缓存的 ChromeDriver，使用 Selenium 内置管理")
-            if service is None:
-                service = Service()
-            driver = webdriver.Chrome(service=service, options=chrome_options)
+            # 使用本地 WebDriver（优先 webdriver-manager，避免 PATH 中旧 chromedriver）
+            logging.info("使用本地 Chrome 驱动")
+            service = _resolve_local_chrome_service()
+            try:
+                driver = webdriver.Chrome(service=service, options=chrome_options)
+            except Exception as e:
+                logging.error(
+                    "Chrome 启动失败。请尝试: 1) pip install webdriver-manager  "
+                    "2) 从系统环境变量 PATH 中移除旧版 chromedriver 目录（如 D:\\webdriver\\bin）"
+                )
+                raise e
 
         driver.implicitly_wait(2)
         driver.set_page_load_timeout(60)

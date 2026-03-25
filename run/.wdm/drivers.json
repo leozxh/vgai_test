@@ -2,5 +2,9 @@
     "win64_chromedriver_145.0.7632.117_for_145.0.7632": {
         "timestamp": "18/03/2026",
         "binary_path": "D:\\vgai_test\\run\\.wdm\\drivers\\chromedriver\\win64\\145.0.7632.117\\chromedriver-win32/chromedriver.exe"
+    },
+    "win64_chromedriver_146.0.7680.153_for_146.0.7680": {
+        "timestamp": "20/03/2026",
+        "binary_path": "D:\\vgai_test\\run\\.wdm\\drivers\\chromedriver\\win64\\146.0.7680.153\\chromedriver-win32/chromedriver.exe"
     }
 }

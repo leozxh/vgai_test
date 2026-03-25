@@ -115,6 +115,7 @@ class ReportManager:
         if self.PROJECT_ROOT not in sys.path:
             sys.path.insert(0, self.PROJECT_ROOT)
         self.REPORTS_DIR = os.path.join(self.PROJECT_ROOT, 'reports')
+        self.last_run_success = False
 
         self.logger = logging.getLogger(__name__)
         if not self.logger.handlers:
@@ -177,7 +178,17 @@ class ReportManager:
             try:
                 result = runner.run()
                 runner._test_result = result
-                self.logger.info("测试完成，结果已保存")
+                # 根据 runner/result 推断真实状态，避免“失败也显示成功”
+                self.last_run_success = True
+                for attr in ('errors', 'failures'):
+                    value = getattr(result, attr, None)
+                    if value:
+                        self.last_run_success = False
+                        break
+                # 部分 runner 可能没有 errors/failures，退化为 unknown->False
+                if not hasattr(result, 'errors') and not hasattr(result, 'failures'):
+                    self.last_run_success = False
+                self.logger.info(f"测试完成，结果已保存，成功状态: {self.last_run_success}")
                 return result
             finally:
                 sys.exit = original_exit
@@ -185,6 +196,7 @@ class ReportManager:
             self.logger.error(f"运行测试时发生错误: {str(e)}")
             import traceback
             self.logger.error(f"错误详情: {traceback.format_exc()}")
+            self.last_run_success = False
             self.logger.info("测试运行失败，但继续执行后续步骤")
             return None
 
@@ -371,7 +383,10 @@ document.getElementById('toggleLogBtn').addEventListener('click', function() {{
 
     def send_wechat_notification_standalone(self):
         """独立的企业微信推送方法"""
-        webhook_url = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=f613f748-a99e-4520-8924-0cde051486da"
+        webhook_url = os.environ.get("WECHAT_WEBHOOK_URL", "").strip()
+        if not webhook_url:
+            self.logger.warning("未配置 WECHAT_WEBHOOK_URL，跳过企业微信推送")
+            return False
 
         test_results = self.analyze_test_results_from_html_report()
         if not test_results:

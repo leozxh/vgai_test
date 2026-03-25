@@ -30,6 +30,17 @@ class AppPageTest(unittest.TestCase):
     def tearDown(self):
         logging.info('Test case execution completed')
 
+    def _do_login_if_needed(self):
+        """确保当前会话已登录（用于解耦测试顺序）"""
+        try:
+            # 能找到 Log In，说明还未登录
+            self.sigin_view.find_one_fast(self.sigin_view.LOGIN_LOCATORS, timeout=2)
+            data = self.sigin_view.read_json_data('data/account.json', 'account1')
+            return self.sigin_view.login_action(data['username'], data['password'])
+        except Exception:
+            # 找不到 Log In，视为已登录
+            return True
+
     def test_01_app_load(self):
         """主页面加载测试"""
         logging.info('开始主页面加载测试')
@@ -105,14 +116,16 @@ class AppPageTest(unittest.TestCase):
         """登录功能测试"""
         logging.info('开始登录功能测试')
         self.app_view.go_to_app()
-        data = self.sigin_view.read_json_data('data/account.json', 'account1')
-        result = self.sigin_view.login_action(data['username'], data['password'])
+        result = self._do_login_if_needed()
         self.assertTrue(result, "登录失败")
         logging.info('登录功能测试完成')
 
     def test_11_i2v_inspiration_generate(self):
         """图生视频 Inspiration 模板生成测试"""
         logging.info('开始图生视频 Inspiration 模板生成测试')
+        self.app_view.go_to_app()
+        login_ok = self._do_login_if_needed()
+        self.assertTrue(login_ok, "执行 i2v 测试前登录失败")
         result = self.i2v_view.i2v_inspiration_generation_test()
         self.assertTrue(result, "图生视频 Inspiration 模板生成测试失败")
         logging.info('图生视频 Inspiration 模板生成测试完成')

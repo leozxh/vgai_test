@@ -3,6 +3,8 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import logging
 import time
+from urllib.parse import urlsplit
+from selenium.webdriver.support.ui import WebDriverWait
 from common.caps import DriverManager
 from common.elementlibrary import AppPage
 
@@ -17,8 +19,12 @@ class AppView(AppPage):
         """访问 App 主页面"""
         try:
             logging.info('访问 /app 页面...')
-            self.driver.get(self.driver.current_url.split('/app')[0] + '/app')
-            time.sleep(5)
+            current = self.driver.current_url
+            parsed = urlsplit(current)
+            origin = f"{parsed.scheme}://{parsed.netloc}" if parsed.scheme and parsed.netloc else "https://visiva.ai"
+            self.driver.get(origin + '/app')
+            WebDriverWait(self.driver, 12).until(lambda d: '/app' in d.current_url)
+            self.find_one_fast(AppPage.HOT_TEMPLATES_LOCATORS, timeout=8)
             return True
         except Exception as e:
             logging.error(f'访问 App 页面失败: {str(e)}')
@@ -66,7 +72,7 @@ class AppView(AppPage):
         """安全点击元素，处理被遮挡的情况"""
         try:
             self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
-            time.sleep(0.5)
+            time.sleep(0.2)
             try:
                 element.click()
                 logging.info(f'成功点击{element_name}')
@@ -86,7 +92,9 @@ class AppView(AppPage):
             logging.info(f'开始点击 {feature_name}...')
             element = self.find_one_fast(locators, timeout=15)
             self.safe_click_element(element, feature_name)
-            time.sleep(2)
+            WebDriverWait(self.driver, 10).until(
+                lambda d: any(kw.lower() in d.current_url.lower() for kw in expected_keywords)
+            )
             current_url = self.driver.current_url.lower()
             logging.info(f'当前页面URL: {current_url}')
             for kw in expected_keywords:

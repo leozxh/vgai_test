@@ -8,7 +8,7 @@ class Login(Common):
     LOGIN_LOCATORS = [
         (By.XPATH, "//button[contains(., 'Log In')]"),
         (By.XPATH, "//*[contains(text(), 'Log In')]"),
-        (By.CSS_SELECTOR, 'button:contains("Log In")'),
+        (By.XPATH, "//a[contains(., 'Log In')]"),
     ]
 
     EMAIL_LOCATORS = [
@@ -31,10 +31,12 @@ class Login(Common):
         (By.CSS_SELECTOR, 'input[type="submit"]'),
     ]
 
+    # 登录成功后的显著标识（避免使用 body/nav 这种恒存在元素）
     LOGIN_SUCCESS_LOCATORS = [
-        (By.XPATH, "//body"),
-        (By.CSS_SELECTOR, 'nav'),
-        (By.CSS_SELECTOR, 'header nav'),
+        (By.XPATH, "//*[contains(., 'My Creations')]"),
+        (By.XPATH, "//*[contains(., 'Upgrade Now')]"),
+        (By.XPATH, "//*[contains(., 'AI Effects')]"),
+        (By.XPATH, "//button[contains(., 'Log Out') or contains(., 'Logout')]"),
     ]
 
 

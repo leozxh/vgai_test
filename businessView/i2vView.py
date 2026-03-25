@@ -3,6 +3,7 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import logging
 import time
+from urllib.parse import urlsplit
 from common.elementlibrary import ImageToVideo
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -19,9 +20,11 @@ class I2VView(ImageToVideo):
         """进入 Image to Video 页面"""
         try:
             logging.info('进入 Image to Video 页面...')
-            base_url = self.driver.current_url.split('/app')[0]
-            self.driver.get(base_url + '/app/image-to-video')
-            time.sleep(3)
+            current = self.driver.current_url
+            parsed = urlsplit(current)
+            origin = f"{parsed.scheme}://{parsed.netloc}" if parsed.scheme and parsed.netloc else "https://visiva.ai"
+            self.driver.get(origin + '/app/image-to-video')
+            WebDriverWait(self.driver, 12).until(lambda d: 'image-to-video' in d.current_url)
             logging.info(f'当前 URL: {self.driver.current_url}')
             return 'image-to-video' in self.driver.current_url
         except Exception as e:
@@ -34,7 +37,11 @@ class I2VView(ImageToVideo):
             logging.info('点击 Inspiration 按钮...')
             btn = self.find_one_fast(ImageToVideo.INSPIRATION_BTN_LOCATORS, timeout=5)
             btn.click()
-            time.sleep(2)
+            # 点击后等待模板或输入框出现
+            try:
+                self.find_one_fast(ImageToVideo.INSPIRATION_TEMPLATE_LOCATORS, timeout=5)
+            except Exception:
+                self.find_one_fast(ImageToVideo.PROMPT_TEXTAREA_LOCATORS, timeout=5)
             logging.info('已点击 Inspiration')
             return True
         except Exception as e:
@@ -46,7 +53,19 @@ class I2VView(ImageToVideo):
         try:
             logging.info('选择 Inspiration 模板...')
 
-            # 查找 Inspiration 面板中第一个可见的模板图片
+            # 优先使用稳定定位器，避免全页扫图带来的不稳定
+            try:
+                template = self.find_one(ImageToVideo.INSPIRATION_TEMPLATE_LOCATORS, timeout=4, clickable=True)
+                self.driver.execute_script("arguments[0].scrollIntoView(true);", template)
+                time.sleep(0.2)
+                self.driver.execute_script("arguments[0].click();", template)
+                logging.info('已通过稳定定位器选择 Inspiration 模板')
+                self.find_one_fast(ImageToVideo.PROMPT_TEXTAREA_LOCATORS, timeout=6)
+                return True
+            except Exception:
+                logging.info('稳定定位器未命中，降级为启发式选图')
+
+            # 兜底：查找 Inspiration 面板中第一个可见的模板图片
             all_imgs = self.driver.find_elements(By.TAG_NAME, 'img')
             for img in all_imgs:
                 try:
@@ -56,10 +75,10 @@ class I2VView(ImageToVideo):
                     if not src or 'logo' in src.lower() or 'icon' in src.lower() or 'avatar' in src.lower():
                         continue
                     self.driver.execute_script("arguments[0].scrollIntoView(true);", img)
-                    time.sleep(0.5)
+                    time.sleep(0.2)
                     self.driver.execute_script("arguments[0].click();", img)
                     logging.info(f'已选择第一个 Inspiration 模板: {src[:80]}')
-                    time.sleep(3)
+                    self.find_one_fast(ImageToVideo.PROMPT_TEXTAREA_LOCATORS, timeout=6)
                     return True
                 except Exception:
                     continue
@@ -90,7 +109,6 @@ class I2VView(ImageToVideo):
             logging.info('点击 Create 按钮...')
             # 先滚动到页面顶部，确保 Create 按钮可见
             self.driver.execute_script("window.scrollTo(0, 0);")
-            time.sleep(1)
 
             try:
                 btn = self.find_one(ImageToVideo.CREATE_BTN_LOCATORS, timeout=5, clickable=True)
@@ -110,13 +128,12 @@ class I2VView(ImageToVideo):
                     raise Exception('未找到 Create/Generate 按钮')
 
             self.driver.execute_script("arguments[0].scrollIntoView(true);", btn)
-            time.sleep(0.5)
+            time.sleep(0.2)
             try:
                 btn.click()
             except Exception:
                 self.driver.execute_script("arguments[0].click();", btn)
             logging.info('已点击 Create')
-            time.sleep(3)
             return True
         except Exception as e:
             logging.error(f'点击 Create 失败: {str(e)}')
@@ -126,7 +143,14 @@ class I2VView(ImageToVideo):
         """验证生成过程没有报错"""
         try:
             logging.info('验证生成结果...')
-            time.sleep(3)
+            # 优先等待生成状态提示，最多 8 秒
+            try:
+                progress = self.find_one_fast(ImageToVideo.GENERATION_PROGRESS_LOCATORS, timeout=8)
+                if progress:
+                    logging.info(f'生成任务已提交，状态: {progress.text[:60]}')
+                    return True
+            except Exception:
+                pass
 
             # 检查是否有错误提示
             error_elements = self.driver.find_elements(
@@ -146,20 +170,13 @@ class I2VView(ImageToVideo):
                 logging.error(f'页面跳转到错误页: {current_url}')
                 return False
 
-            # 检查是否出现生成进度/排队状态（说明任务已提交成功）
-            try:
-                progress = self.find_one_fast(ImageToVideo.GENERATION_PROGRESS_LOCATORS, timeout=5)
-                if progress:
-                    logging.info(f'生成任务已提交，状态: {progress.text[:60]}')
-                    return True
-            except Exception:
-                pass
-
             # 检查 Record 区域是否有新增记录（也表示生成请求成功）
             try:
                 record_btn = self.driver.find_element(By.XPATH, "//button[contains(text(), 'Record')]")
                 record_btn.click()
-                time.sleep(2)
+                WebDriverWait(self.driver, 4).until(
+                    lambda d: len(d.find_elements(By.XPATH, "//*[contains(text(), 'Image to Video')]")) > 0
+                )
                 records = self.driver.find_elements(By.XPATH, "//*[contains(text(), 'Image to Video')]")
                 if records:
                     logging.info('Record 区域有生成记录，生成请求成功')
