@@ -2,7 +2,12 @@ services:
   vgai-test:
     build: .
     container_name: vgai-test
+    network_mode: host
     volumes:
       - ./reports:/app/reports
       - ./logs:/app/logs
+    environment:
+      - HTTP_PROXY=http://127.0.0.1:7890
+      - HTTPS_PROXY=http://127.0.0.1:7890
+      - NO_PROXY=localhost,127.0.0.1
     restart: unless-stopped
