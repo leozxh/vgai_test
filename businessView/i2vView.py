@@ -65,23 +65,28 @@ class I2VView(ImageToVideo):
             except Exception:
                 logging.info('稳定定位器未命中，降级为启发式选图')
 
-            # 兜底：查找 Inspiration 面板中第一个可见的模板图片
-            all_imgs = self.driver.find_elements(By.TAG_NAME, 'img')
-            for img in all_imgs:
-                try:
-                    if not img.is_displayed() or img.size.get('width', 0) < 80:
-                        continue
-                    src = img.get_attribute('src') or ''
-                    if not src or 'logo' in src.lower() or 'icon' in src.lower() or 'avatar' in src.lower():
-                        continue
-                    self.driver.execute_script("arguments[0].scrollIntoView(true);", img)
-                    time.sleep(0.2)
-                    self.driver.execute_script("arguments[0].click();", img)
-                    logging.info(f'已选择第一个 Inspiration 模板: {src[:80]}')
-                    self.find_one_fast(ImageToVideo.PROMPT_TEXTAREA_LOCATORS, timeout=6)
-                    return True
-                except Exception:
-                    continue
+            # 兜底：用 JS 找 Inspiration 面板中第一个可见模板图片（放宽尺寸限制）
+            template = self.driver.execute_script("""
+                var skip = ['logo', 'icon', 'avatar', 'data:image/svg', 'favicon'];
+                var imgs = document.querySelectorAll('img');
+                for (var img of imgs) {
+                    var rect = img.getBoundingClientRect();
+                    if (rect.width < 20 || rect.height < 20) continue;
+                    var src = (img.src || img.getAttribute('src') || '').toLowerCase();
+                    if (!src) continue;
+                    if (skip.some(function(k){ return src.includes(k); })) continue;
+                    return img;
+                }
+                return null;
+            """)
+            if template:
+                self.driver.execute_script("arguments[0].scrollIntoView(true);", template)
+                time.sleep(0.2)
+                self.driver.execute_script("arguments[0].click();", template)
+                src = template.get_attribute('src') or ''
+                logging.info(f'已选择第一个 Inspiration 模板: {src[:80]}')
+                self.find_one_fast(ImageToVideo.PROMPT_TEXTAREA_LOCATORS, timeout=6)
+                return True
 
             logging.warning('未找到可用的 Inspiration 模板')
             return False
