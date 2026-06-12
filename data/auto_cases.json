@@ -1,0 +1,1992 @@
+[
+  {
+    "id": "M-1-1",
+    "site": "营销站",
+    "module": "首页 /",
+    "point": "TDK 检查",
+    "steps": "查看页面源码 title/description/keywords",
+    "expected": "Title: Visiva AI – Fun AI Video & Image Generator for Memes and Fan Edits\n\nDescription ：Visiva is a lightweight AI tool for creating fun videos from text, images, or clips. Perfect for memes, CP fan edits, mood visuals, and playful short videos. \n\nKeywords ： AI video generator, image to video AI, text to video, extend video, meme video maker, fan edit AI, CP edits      ",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-1-2",
+    "site": "营销站",
+    "module": "首页 /",
+    "point": "导航栏-Logo",
+    "steps": "点击 Logo",
+    "expected": "回到首页",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-1-6",
+    "site": "营销站",
+    "module": "首页 /",
+    "point": "导航栏-Pricing",
+    "steps": "点击 Pricing",
+    "expected": "跳转到 /pricing",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-1-7",
+    "site": "营销站",
+    "module": "首页 /",
+    "point": "导航栏-Get Started",
+    "steps": "点击 Get Started",
+    "expected": "跳转到 /app",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-1-8",
+    "site": "营销站",
+    "module": "首页 /",
+    "point": "导航栏-语言切换",
+    "steps": "切换到其他语言（如繁體中文）",
+    "expected": "URL 变成 /zh-TW 页面内容切换为繁体中文",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-1-9",
+    "site": "营销站",
+    "module": "首页 /",
+    "point": "Hero 区域-CTA 按钮",
+    "steps": "点击主 CTA 按钮",
+    "expected": "跳转到产品站",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-1-10",
+    "site": "营销站",
+    "module": "首页 /",
+    "point": "视频展示区",
+    "steps": "滚动到视频展示区",
+    "expected": "视频正常播放/展示",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-1-11",
+    "site": "营销站",
+    "module": "首页 /",
+    "point": "AI Tools 区域",
+    "steps": "查看 AI 工具展示",
+    "expected": "各工具卡片正常显示 链接可跳转",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-1-12",
+    "site": "营销站",
+    "module": "首页 /",
+    "point": "FAQ 区域",
+    "steps": "展开/折叠 FAQ 项",
+    "expected": "手风琴效果正常",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-1-13",
+    "site": "营销站",
+    "module": "首页 /",
+    "point": "评论轮播",
+    "steps": "查看评论区",
+    "expected": "轮播正常滚动",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-1-14",
+    "site": "营销站",
+    "module": "首页 /",
+    "point": "WhatsApp 悬浮按钮",
+    "steps": "页面右下角",
+    "expected": "显示 WhatsApp 图标",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-1-18",
+    "site": "营销站",
+    "module": "首页 /",
+    "point": "Cookie Banner",
+    "steps": "首次访问",
+    "expected": "底部显示 Cookie 提示横幅",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-1-19",
+    "site": "营销站",
+    "module": "首页 /",
+    "point": "移动端-汉堡菜单",
+    "steps": "移动端点击汉堡图标",
+    "expected": "展开手风琴式导航菜单",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-1-20",
+    "site": "营销站",
+    "module": "首页 /",
+    "point": "懒加载",
+    "steps": "滚动到下方区域",
+    "expected": "组件按需加载 无白屏",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-2-1",
+    "site": "营销站",
+    "module": "定价页 /pricing",
+    "point": "TDK 检查",
+    "steps": "查看页面源码",
+    "expected": "有正确的 Title/Description/Keywords",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-2-2",
+    "site": "营销站",
+    "module": "定价页 /pricing",
+    "point": "套餐展示",
+    "steps": "查看三个套餐（Lite/Pro/Max）",
+    "expected": "价格/积分/功能列表正确显示",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-2-3",
+    "site": "营销站",
+    "module": "定价页 /pricing",
+    "point": "月付/年付切换",
+    "steps": "点击 Monthly / Yearly 切换",
+    "expected": "价格和计费周期正确切换",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-2-4",
+    "site": "营销站",
+    "module": "定价页 /pricing",
+    "point": "Pro 滑块",
+    "steps": "拖动 Pro 套餐滑块",
+    "expected": "4 档价格/积分正确切换",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-2-5",
+    "site": "营销站",
+    "module": "定价页 /pricing",
+    "point": "购买按钮（未登录）",
+    "steps": "点击 Buy Now（未登录）",
+    "expected": "弹出登录弹窗",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-2-6",
+    "site": "营销站",
+    "module": "定价页 /pricing",
+    "point": "购买按钮（已登录）",
+    "steps": "点击 Buy Now（已登录）",
+    "expected": "跳转到产品站，弹出会员购买弹窗/单独购买积分弹窗",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-2-7",
+    "site": "营销站",
+    "module": "定价页 /pricing",
+    "point": "功能对比表",
+    "steps": "查看套餐功能对比",
+    "expected": "各项功能标记正确（✓/折扣）",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-3-1",
+    "site": "营销站",
+    "module": "Terms /terms",
+    "point": "标题",
+    "steps": "查看页面",
+    "expected": "Terms and Conditions 居中大标题",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-3-2",
+    "site": "营销站",
+    "module": "Terms /terms",
+    "point": "副标题",
+    "steps": "查看 Last Updated",
+    "expected": "Last Updated: March 26 2026 左对齐加粗",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-3-3",
+    "site": "营销站",
+    "module": "Terms /terms",
+    "point": "内容完整性",
+    "steps": "滚动全文",
+    "expected": "20 个章节（含子章节）全部显示",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-3-4",
+    "site": "营销站",
+    "module": "Terms /terms",
+    "point": "联系信息",
+    "steps": "滚动到 Section 20",
+    "expected": "Company Name/Email/Address 标签加粗 邮箱可点击",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-3-5",
+    "site": "营销站",
+    "module": "Terms /terms",
+    "point": "多语言",
+    "steps": "切换到其他语言",
+    "expected": "内容切换为对应语言",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-3-6",
+    "site": "营销站",
+    "module": "Refund /refund-policy",
+    "point": "标题",
+    "steps": "查看页面",
+    "expected": "Refund Policy 居中大标题",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-3-7",
+    "site": "营销站",
+    "module": "Refund /refund-policy",
+    "point": "内容完整性",
+    "steps": "滚动全文",
+    "expected": "13 个章节（含子章节）全部显示",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-3-8",
+    "site": "营销站",
+    "module": "Refund /refund-policy",
+    "point": "多语言",
+    "steps": "切换语言",
+    "expected": "内容切换为对应语言",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-3-10",
+    "site": "营销站",
+    "module": "Cookie /cookie-policy",
+    "point": "页面正常",
+    "steps": "访问页面",
+    "expected": "内容正常显示",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-3-11",
+    "site": "营销站",
+    "module": "Disclaimer /disclaimer",
+    "point": "页面正常",
+    "steps": "访问页面",
+    "expected": "内容正常显示",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-3-12",
+    "site": "营销站",
+    "module": "License /license-agreement",
+    "point": "页面正常",
+    "steps": "访问页面",
+    "expected": "内容正常显示",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-4-1",
+    "site": "营销站",
+    "module": "About /about",
+    "point": "页面正常加载",
+    "steps": "访问页面",
+    "expected": "About 页面内容显示正常",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-4-2",
+    "site": "营销站",
+    "module": "Contact /contact-us",
+    "point": "页面正常加载",
+    "steps": "访问页面",
+    "expected": "联系方式显示正常",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-4-3",
+    "site": "营销站",
+    "module": "FAQ /faq",
+    "point": "FAQ 手风琴",
+    "steps": "展开/折叠 FAQ 项",
+    "expected": "展开/折叠正常",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-4-4",
+    "site": "营销站",
+    "module": "Spicy /spicy-ai-generator",
+    "point": "落地页",
+    "steps": "访问页面",
+    "expected": "内容正常显示",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-5-1",
+    "site": "营销站",
+    "module": "页脚（通用）",
+    "point": "AI Tools 链接",
+    "steps": "点击 Text to Video / Image to Video / Video Extend",
+    "expected": "正确跳转到对应产品页",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-5-2",
+    "site": "营销站",
+    "module": "页脚（通用）",
+    "point": "AI Effects 链接",
+    "steps": "点击各特效链接",
+    "expected": "正确跳转",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-5-3",
+    "site": "营销站",
+    "module": "页脚（通用）",
+    "point": "Company 链接",
+    "steps": "点击 About / Contact / Cookie Policy / Privacy Policy / Refund Policy",
+    "expected": "正确跳转",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-5-4",
+    "site": "营销站",
+    "module": "页脚（通用）",
+    "point": "Resources 链接",
+    "steps": "点击 Terms / License Agreement / Disclaimer",
+    "expected": "正确跳转",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-5-6",
+    "site": "营销站",
+    "module": "页脚（通用）",
+    "point": "移动端页脚",
+    "steps": "移动端查看",
+    "expected": "手风琴折叠式展示",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-6-1",
+    "site": "产品站",
+    "module": "登录/注册",
+    "point": "未登录访问 /app",
+    "steps": "直接访问 /app",
+    "expected": "展示未登录状态",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-6-2",
+    "site": "产品站",
+    "module": "登录/注册",
+    "point": "登录弹窗-默认状态",
+    "steps": "点击 Log In",
+    "expected": "显示登录表单（非注册）",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-6-3",
+    "site": "产品站",
+    "module": "登录/注册",
+    "point": "邮箱登录",
+    "steps": "输入邮箱+密码 点击登录",
+    "expected": "登录成功 弹窗关闭 进入产品页",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-6-5",
+    "site": "产品站",
+    "module": "登录/注册",
+    "point": "注册",
+    "steps": "切换到注册 → 填写邮箱+密码 → 提交",
+    "expected": "注册成功并自动登录",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-6-6",
+    "site": "产品站",
+    "module": "登录/注册",
+    "point": "密码校验",
+    "steps": "注册时输入不合规密码（<8位/纯数字）",
+    "expected": "显示错误提示",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-6-8",
+    "site": "产品站",
+    "module": "登录/注册",
+    "point": "退出后再登录",
+    "steps": "登录 → 退出 → 点击登录",
+    "expected": "显示登录页面（非注册页）",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-6-10",
+    "site": "产品站",
+    "module": "登录/注册",
+    "point": "Terms/Privacy 链接",
+    "steps": "点击表单底部链接",
+    "expected": "跳转到对应法律页面",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-7-1",
+    "site": "产品站",
+    "module": "产品首页 /app",
+    "point": "页面加载",
+    "steps": "登录后访问",
+    "expected": "仪表盘正常显示",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-7-2",
+    "site": "产品站",
+    "module": "产品首页 /app",
+    "point": "Banner 轮播",
+    "steps": "查看顶部 Banner",
+    "expected": "轮播正常切换",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-7-3",
+    "site": "产品站",
+    "module": "产品首页 /app",
+    "point": "快捷创建入口",
+    "steps": "点击各 AI 工具卡片",
+    "expected": "跳转到对应生成页",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-7-4",
+    "site": "产品站",
+    "module": "产品首页 /app",
+    "point": "热门模板",
+    "steps": "查看热门模板区",
+    "expected": "模板正常展示",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-7-5",
+    "site": "产品站",
+    "module": "产品首页 /app",
+    "point": "视频列表",
+    "steps": "滚动到视频列表",
+    "expected": "视频卡片正常展示",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-8-1",
+    "site": "产品站",
+    "module": "Header 顶栏",
+    "point": "Logo",
+    "steps": "点击 Logo",
+    "expected": "回到 营销站",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-8-2",
+    "site": "产品站",
+    "module": "Header 顶栏",
+    "point": "奖励中心入口",
+    "steps": "点击礼物图标",
+    "expected": "右侧弹出奖励中心 Slideover",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-8-3",
+    "site": "产品站",
+    "module": "Header 顶栏",
+    "point": "+100 气泡（移动端未签到）",
+    "steps": "移动端查看",
+    "expected": "气泡始终显示在礼物图标右上方",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-8-5",
+    "site": "产品站",
+    "module": "Header 顶栏",
+    "point": "积分显示",
+    "steps": "查看积分数字",
+    "expected": "和用户实际积分一致",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-8-6",
+    "site": "产品站",
+    "module": "Header 顶栏",
+    "point": "Upgrade 按钮（Free 用户）",
+    "steps": "点击 Upgrade",
+    "expected": "弹出升级弹窗",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-8-7",
+    "site": "产品站",
+    "module": "Header 顶栏",
+    "point": "套餐标签（付费用户）",
+    "steps": "查看套餐标签",
+    "expected": "显示正确的 Lite/Pro/Max",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-8-8",
+    "site": "产品站",
+    "module": "Header 顶栏",
+    "point": "用户头像",
+    "steps": "点击头像",
+    "expected": "弹出 UserMenu",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-9-1",
+    "site": "产品站",
+    "module": "侧边栏",
+    "point": "Home",
+    "steps": "点击 Home",
+    "expected": "跳转到 /app",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-9-2",
+    "site": "产品站",
+    "module": "侧边栏",
+    "point": "AI Effects",
+    "steps": "点击 AI Effects",
+    "expected": "跳转到 /app/video-effects",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-9-3",
+    "site": "产品站",
+    "module": "侧边栏",
+    "point": "Image to Video",
+    "steps": "点击 Image to Video",
+    "expected": "跳转到 /app/image-to-video 显示 Hot 标签",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-9-4",
+    "site": "产品站",
+    "module": "侧边栏",
+    "point": "Text to Video",
+    "steps": "点击",
+    "expected": "跳转到 /app/text-to-video",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-9-5",
+    "site": "产品站",
+    "module": "侧边栏",
+    "point": "AI NSFW",
+    "steps": "查看是否显示",
+    "expected": "仅 is_open_nsfw=1 时显示 带 New 标签 菜单项名称为 AI NSFW",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-9-6",
+    "site": "产品站",
+    "module": "侧边栏",
+    "point": "Video Extend",
+    "steps": "点击",
+    "expected": "跳转到 /app/video-extend",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-9-7",
+    "site": "产品站",
+    "module": "侧边栏",
+    "point": "Image to Image",
+    "steps": "点击",
+    "expected": "跳转到 /app/image-to-image",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-9-8",
+    "site": "产品站",
+    "module": "侧边栏",
+    "point": "Text to Image",
+    "steps": "点击",
+    "expected": "跳转到 /app/text-to-image",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-9-9",
+    "site": "产品站",
+    "module": "侧边栏",
+    "point": "My Creations",
+    "steps": "点击",
+    "expected": "跳转到 /app/creations",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-9-10",
+    "site": "产品站",
+    "module": "侧边栏",
+    "point": "底部 Upgrade Now",
+    "steps": "点击（Free 用户）",
+    "expected": "弹出升级弹窗",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-9-11",
+    "site": "产品站",
+    "module": "侧边栏",
+    "point": "移动端侧边栏",
+    "steps": "点击汉堡图标",
+    "expected": "侧边栏正常展开/收起",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-9-12",
+    "site": "产品站",
+    "module": "侧边栏",
+    "point": "Face Swap 入口",
+    "steps": "查看侧边栏",
+    "expected": "Face Swap 入口当前隐藏（审核期间）",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-10-1",
+    "site": "产品站",
+    "module": "UserMenu",
+    "point": "Settings",
+    "steps": "点击 Settings",
+    "expected": "弹出 Profile Slideover",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-10-2",
+    "site": "产品站",
+    "module": "UserMenu",
+    "point": "Rewards Center",
+    "steps": "点击 Rewards Center",
+    "expected": "弹出奖励中心",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-10-3",
+    "site": "产品站",
+    "module": "UserMenu",
+    "point": "Manage Subscription（付费）",
+    "steps": "点击（付费用户）",
+    "expected": "弹出订阅管理弹窗",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-10-4",
+    "site": "产品站",
+    "module": "UserMenu",
+    "point": "Manage Subscription（Free）",
+    "steps": "查看（Free 用户）",
+    "expected": "不显示此菜单项",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-10-5",
+    "site": "产品站",
+    "module": "UserMenu",
+    "point": "Privacy Policy",
+    "steps": "点击",
+    "expected": "跳转到 /privacy-policy",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-10-6",
+    "site": "产品站",
+    "module": "UserMenu",
+    "point": "Feedback",
+    "steps": "点击",
+    "expected": "弹出反馈弹窗",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-10-7",
+    "site": "产品站",
+    "module": "UserMenu",
+    "point": "FAQ",
+    "steps": "点击",
+    "expected": "跳转到 /faq",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-10-8",
+    "site": "产品站",
+    "module": "UserMenu",
+    "point": "Log out",
+    "steps": "点击",
+    "expected": "退出登录 跳转回 /app",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-10-9",
+    "site": "产品站",
+    "module": "UserMenu",
+    "point": "语言切换",
+    "steps": "展开语言列表 选择其他语言",
+    "expected": "切换成功 当前语言有 ✓ 标记",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-11-1",
+    "site": "产品站",
+    "module": "Image to Video",
+    "point": "模型列表",
+    "steps": "展开模型选择器",
+    "expected": "显示3个模型：Visiva Intimate R4.0(Hot) / Visiva Pro T3.0(New) / Visiva Pro T2.0",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-11-2",
+    "site": "产品站",
+    "module": "Image to Video",
+    "point": "模型切换",
+    "steps": "切换不同模型",
+    "expected": "参数选项（时长/分辨率）随模型变化",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-11-3",
+    "site": "产品站",
+    "module": "Image to Video",
+    "point": "图片上传",
+    "steps": "上传一张图片",
+    "expected": "预览正常显示 ≤20MB ≤2000px",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-11-4",
+    "site": "产品站",
+    "module": "Image to Video",
+    "point": "双图模式",
+    "steps": "开启双图上传",
+    "expected": "可上传两张图片",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-11-5",
+    "site": "产品站",
+    "module": "Image to Video",
+    "point": "Prompt 输入",
+    "steps": "输入文本提示词",
+    "expected": "正常输入 ≤2000 字符",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-11-6",
+    "site": "产品站",
+    "module": "Image to Video",
+    "point": "时长选择-Intimate R4.0",
+    "steps": "选择模型 Intimate R4.0",
+    "expected": "可选：5s / 10s",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-11-7",
+    "site": "产品站",
+    "module": "Image to Video",
+    "point": "时长选择-Pro T3.0",
+    "steps": "选择模型 Pro T3.0",
+    "expected": "可选：5s / 8s / 10s / 12s",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-11-8",
+    "site": "产品站",
+    "module": "Image to Video",
+    "point": "时长选择-Pro T2.0",
+    "steps": "选择模型 Pro T2.0",
+    "expected": "可选：8s / 10s / 12s",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-11-9",
+    "site": "产品站",
+    "module": "Image to Video",
+    "point": "分辨率选择-Intimate R4.0",
+    "steps": "选择模型 Intimate R4.0",
+    "expected": "可选：480P / 720P / 1080P",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-11-10",
+    "site": "产品站",
+    "module": "Image to Video",
+    "point": "分辨率选择-Pro T3.0",
+    "steps": "选择模型 Pro T3.0",
+    "expected": "可选：360P / 480P / 540P / 720P / 1080P",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-11-11",
+    "site": "产品站",
+    "module": "Image to Video",
+    "point": "分辨率选择-Pro T2.0",
+    "steps": "选择模型 Pro T2.0",
+    "expected": "可选：720P / 1080P",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-11-12",
+    "site": "产品站",
+    "module": "Image to Video",
+    "point": "积分显示-Free",
+    "steps": "Free用户 Intimate R4.0 5s 480P",
+    "expected": "显示 600 积分",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-11-13",
+    "site": "产品站",
+    "module": "Image to Video",
+    "point": "积分显示-Lite",
+    "steps": "Lite用户 Intimate R4.0 5s 480P",
+    "expected": "显示 420 积分（600×0.7）",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-11-14",
+    "site": "产品站",
+    "module": "Image to Video",
+    "point": "积分显示-Pro",
+    "steps": "Pro用户 Intimate R4.0 5s 480P",
+    "expected": "显示 300 积分（600×0.5）",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-11-15",
+    "site": "产品站",
+    "module": "Image to Video",
+    "point": "积分显示-Max",
+    "steps": "Max用户 Intimate R4.0 5s 480P",
+    "expected": "显示 180 积分（600×0.3）",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-11-16",
+    "site": "产品站",
+    "module": "Image to Video",
+    "point": "生成",
+    "steps": "点击 Create",
+    "expected": "积分扣除 显示生成进度 完成后显示视频",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-11-17",
+    "site": "产品站",
+    "module": "Image to Video",
+    "point": "积分不足",
+    "steps": "积分不够时点 Create",
+    "expected": "Free→升级弹窗 付费→积分购买弹窗",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-11-18",
+    "site": "产品站",
+    "module": "Image to Video",
+    "point": "生成失败",
+    "steps": "生成失败时",
+    "expected": "积分返还 显示失败原因（图片/视频/Prompt违规/超时）",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-12-1",
+    "site": "产品站",
+    "module": "Text to Video",
+    "point": "模型列表",
+    "steps": "展开模型选择器",
+    "expected": "显示3个模型：Visiva Intimate R4.0(Hot) / Visiva Pro T3.0(New) / Visiva Pro T2.0",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-12-2",
+    "site": "产品站",
+    "module": "Text to Video",
+    "point": "Prompt 必填",
+    "steps": "不输入 Prompt 点 Create",
+    "expected": "提示必填",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-12-3",
+    "site": "产品站",
+    "module": "Text to Video",
+    "point": "比例选择-Intimate R4.0",
+    "steps": "选择 Intimate R4.0",
+    "expected": "可选比例：16:9 / 9:16",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-12-4",
+    "site": "产品站",
+    "module": "Text to Video",
+    "point": "比例选择-Pro T3.0",
+    "steps": "选择 Pro T3.0",
+    "expected": "可选比例：16:9 / 9:16 / 1:1 / 4:3 / 3:4",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-12-5",
+    "site": "产品站",
+    "module": "Text to Video",
+    "point": "比例选择-Pro T2.0",
+    "steps": "选择 Pro T2.0",
+    "expected": "可选比例：1:1 / 4:3 / 3:4",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-12-6",
+    "site": "产品站",
+    "module": "Text to Video",
+    "point": "积分显示",
+    "steps": "调整模型/时长/分辨率参数",
+    "expected": "积分实时变化 不同会员等级显示不同金额",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-12-7",
+    "site": "产品站",
+    "module": "Text to Video",
+    "point": "生成流程",
+    "steps": "输入 prompt → 选参数 → Create",
+    "expected": "生成成功 视频可预览",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-13-1",
+    "site": "产品站",
+    "module": "AI NSFW",
+    "point": "模型固定",
+    "steps": "查看模型",
+    "expected": "仅显示 Visiva Intimate R4.0（Hot）不可切换",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-13-2",
+    "site": "产品站",
+    "module": "AI NSFW",
+    "point": "图片必填",
+    "steps": "不上传图片点 Create",
+    "expected": "提示必填",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-13-3",
+    "site": "产品站",
+    "module": "AI NSFW",
+    "point": "Prompt 必填",
+    "steps": "不输入 Prompt 点 Create",
+    "expected": "提示必填",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-13-4",
+    "site": "产品站",
+    "module": "AI NSFW",
+    "point": "时长选择",
+    "steps": "查看可选时长",
+    "expected": "5s / 10s",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-13-5",
+    "site": "产品站",
+    "module": "AI NSFW",
+    "point": "分辨率选择",
+    "steps": "查看可选分辨率",
+    "expected": "480P / 720P / 1080P",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-13-6",
+    "site": "产品站",
+    "module": "AI NSFW",
+    "point": "积分显示",
+    "steps": "查看积分",
+    "expected": "与 Intimate R4.0 积分表一致 适用会员折扣",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-13-7",
+    "site": "产品站",
+    "module": "AI NSFW",
+    "point": "生成流程",
+    "steps": "上传图片 + 输入 Prompt → Create",
+    "expected": "生成成功",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-14-1",
+    "site": "产品站",
+    "module": "Video Extend",
+    "point": "视频上传",
+    "steps": "上传视频",
+    "expected": "≤20MB",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-14-2",
+    "site": "产品站",
+    "module": "Video Extend",
+    "point": "时长选择",
+    "steps": "查看可选时长",
+    "expected": "5s / 8s",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-14-3",
+    "site": "产品站",
+    "module": "Video Extend",
+    "point": "积分显示-Free",
+    "steps": "Free用户选 5s",
+    "expected": "显示 600 积分",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-14-4",
+    "site": "产品站",
+    "module": "Video Extend",
+    "point": "积分显示-Lite",
+    "steps": "Lite用户选 5s",
+    "expected": "显示 420 积分（600×0.7）",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-14-5",
+    "site": "产品站",
+    "module": "Video Extend",
+    "point": "积分显示-Pro",
+    "steps": "Pro用户选 5s",
+    "expected": "显示 300 积分（600×0.5）",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-14-6",
+    "site": "产品站",
+    "module": "Video Extend",
+    "point": "积分显示-Max 5s",
+    "steps": "Max用户选 5s",
+    "expected": "显示 180 积分（600×0.3）",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-14-7",
+    "site": "产品站",
+    "module": "Video Extend",
+    "point": "积分显示-Max 8s",
+    "steps": "Max用户选 8s",
+    "expected": "显示 300 积分（1000×0.3）",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-14-8",
+    "site": "产品站",
+    "module": "Video Extend",
+    "point": "生成",
+    "steps": "上传视频 → 选时长 → Create",
+    "expected": "延展视频生成成功",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-15-1",
+    "site": "产品站",
+    "module": "Image to Image",
+    "point": "模型列表",
+    "steps": "展开模型选择器",
+    "expected": "显示4个模型：Nano Banana Pro(Hot) / Nano Banana / Visiva Intimate R4.0 / Visiva image T3.0",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-15-2",
+    "site": "产品站",
+    "module": "Image to Image",
+    "point": "模型切换",
+    "steps": "切换不同模型",
+    "expected": "质量选项随模型变化（Pro/Banana有1K/2K/4K 其他仅1K）",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-15-3",
+    "site": "产品站",
+    "module": "Image to Image",
+    "point": "图片+Prompt 必填",
+    "steps": "只上传图片不填 Prompt",
+    "expected": "提示 Prompt 必填",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-15-4",
+    "site": "产品站",
+    "module": "Image to Image",
+    "point": "积分显示-Free",
+    "steps": "Free用户 Nano Banana Pro 1K",
+    "expected": "显示 300 积分",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-15-5",
+    "site": "产品站",
+    "module": "Image to Image",
+    "point": "积分显示-Max",
+    "steps": "Max用户 Nano Banana Pro 1K",
+    "expected": "显示 90 积分（300×0.3）",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-15-6",
+    "site": "产品站",
+    "module": "Image to Image",
+    "point": "生成流程",
+    "steps": "上传图片 + 输入 Prompt → Create",
+    "expected": "图片生成成功",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-16-1",
+    "site": "产品站",
+    "module": "Text to Image",
+    "point": "模型列表",
+    "steps": "展开模型选择器",
+    "expected": "显示4个模型：同 Image to Image",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-16-2",
+    "site": "产品站",
+    "module": "Text to Image",
+    "point": "Prompt 必填",
+    "steps": "不输入 Prompt 点 Create",
+    "expected": "提示必填",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-16-3",
+    "site": "产品站",
+    "module": "Text to Image",
+    "point": "比例选择",
+    "steps": "查看比例选项",
+    "expected": "1:1 / 9:16 / 16:9 / 3:4 / 4:3 / 2:3 / 3:2",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-16-4",
+    "site": "产品站",
+    "module": "Text to Image",
+    "point": "积分显示",
+    "steps": "调整模型和质量",
+    "expected": "积分实时变化 不同模型价格不同",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-16-5",
+    "site": "产品站",
+    "module": "Text to Image",
+    "point": "生成流程",
+    "steps": "输入 Prompt → 选参数 → Create",
+    "expected": "图片生成成功",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-17-1",
+    "site": "产品站",
+    "module": "Face Swap（隐藏）",
+    "point": "入口隐藏",
+    "steps": "检查侧边栏",
+    "expected": "Face Swap 入口不可见（审核期间）",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-18-1",
+    "site": "产品站",
+    "module": "AI Effects",
+    "point": "视频特效 Tab",
+    "steps": "点击视频特效",
+    "expected": "显示视频特效列表",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-18-2",
+    "site": "产品站",
+    "module": "AI Effects",
+    "point": "图片特效 Tab",
+    "steps": "点击图片特效",
+    "expected": "显示图片特效列表",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-18-3",
+    "site": "产品站",
+    "module": "AI Effects",
+    "point": "分类筛选",
+    "steps": "点击不同分类",
+    "expected": "列表按分类过滤",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-18-4",
+    "site": "产品站",
+    "module": "AI Effects",
+    "point": "使用特效",
+    "steps": "选择特效 → 跳转",
+    "expected": "视频特效→/app/create-effect 图片特效→/app/create-image-effect",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-18-5",
+    "site": "产品站",
+    "module": "Create Effect",
+    "point": "图片上传",
+    "steps": "上传图片",
+    "expected": "≤20MB ≤4000px",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-18-6",
+    "site": "产品站",
+    "module": "Create Effect",
+    "point": "分辨率选择",
+    "steps": "查看可选分辨率",
+    "expected": "360P / 540P / 720P / 1080P",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-18-7",
+    "site": "产品站",
+    "module": "Create Effect",
+    "point": "积分显示",
+    "steps": "查看积分",
+    "expected": "按特效模板配置 适用会员折扣",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-18-8",
+    "site": "产品站",
+    "module": "Create Effect",
+    "point": "生成",
+    "steps": "上传 → 选分辨率 → Create",
+    "expected": "特效视频生成成功",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-18-9",
+    "site": "产品站",
+    "module": "Create Image Effect",
+    "point": "图片上传",
+    "steps": "上传图片",
+    "expected": "≤20MB ≤4000px",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-18-10",
+    "site": "产品站",
+    "module": "Create Image Effect",
+    "point": "质量选择",
+    "steps": "查看可选质量",
+    "expected": "1K / 2K / 4K",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-18-11",
+    "site": "产品站",
+    "module": "Create Image Effect",
+    "point": "积分显示",
+    "steps": "查看积分",
+    "expected": "按特效模板配置 适用会员折扣",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-18-12",
+    "site": "产品站",
+    "module": "Create Image Effect",
+    "point": "生成",
+    "steps": "上传 → 选质量 → Create",
+    "expected": "特效图片生成成功",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-19-1",
+    "site": "产品站",
+    "module": "奖励中心",
+    "point": "打开",
+    "steps": "点击 Header 礼物图标",
+    "expected": "右侧 Slideover 弹出",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-19-2",
+    "site": "产品站",
+    "module": "奖励中心",
+    "point": "每日签到",
+    "steps": "点击 Start",
+    "expected": "签到成功 积分增加 按钮变为 Claimed",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-19-3",
+    "site": "产品站",
+    "module": "奖励中心",
+    "point": "重复签到",
+    "steps": "已签到后再次点击",
+    "expected": "按钮灰色不可点",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-19-4",
+    "site": "产品站",
+    "module": "奖励中心",
+    "point": "邀请链接",
+    "steps": "查看邀请链接",
+    "expected": "格式：visiva.ai/app/referral/{userId}",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-19-6",
+    "site": "产品站",
+    "module": "奖励中心",
+    "point": "邀请统计",
+    "steps": "查看 Total Referrals / Total Rewards",
+    "expected": "数字正确",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-19-8",
+    "site": "产品站",
+    "module": "奖励中心",
+    "point": "Daily Rewards 提示",
+    "steps": "点击 ⓘ 图标",
+    "expected": "显示重置时间和 UTC 时间",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-19-9",
+    "site": "产品站",
+    "module": "奖励中心",
+    "point": "限时活动",
+    "steps": "查看 Limited-time event 区域",
+    "expected": "标题和倒计时 badge 同一行 卡片紧贴 badge",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-19-10",
+    "site": "产品站",
+    "module": "奖励中心",
+    "point": "Learn more",
+    "steps": "点击 Learn more",
+    "expected": "关闭奖励中心 弹出新用户特惠弹窗",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-20-1",
+    "site": "产品站",
+    "module": "新用户特惠弹窗",
+    "point": "PC 端显示",
+    "steps": "查看弹窗",
+    "expected": "标题完整显示 礼物图片不遮挡文字",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-20-2",
+    "site": "产品站",
+    "module": "新用户特惠弹窗",
+    "point": "移动端显示",
+    "steps": "移动端查看",
+    "expected": "标题一行 副标题一行 礼物图片缩小",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-20-3",
+    "site": "产品站",
+    "module": "新用户特惠弹窗",
+    "point": "套餐选择",
+    "steps": "点击 Max/Pro/Lite",
+    "expected": "选中状态切换 Max 有 50% OFF 角标",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-20-4",
+    "site": "产品站",
+    "module": "新用户特惠弹窗",
+    "point": "终身会员文案",
+    "steps": "移动端查看",
+    "expected": "+ Lifetime Member 一行显示",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-20-5",
+    "site": "产品站",
+    "module": "新用户特惠弹窗",
+    "point": "倒计时",
+    "steps": "查看倒计时",
+    "expected": "12 小时倒计时正常递减",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-20-7",
+    "site": "产品站",
+    "module": "新用户特惠弹窗",
+    "point": "Member privileges",
+    "steps": "点击 Member privileges",
+    "expected": "Popover 显示功能对比表",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-20-8",
+    "site": "产品站",
+    "module": "新用户特惠弹窗",
+    "point": "关闭",
+    "steps": "点击 X 关闭",
+    "expected": "弹窗关闭",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-21-1",
+    "site": "产品站",
+    "module": "Profile 设定",
+    "point": "打开",
+    "steps": "UserMenu → Settings",
+    "expected": "右侧 Slideover 弹出",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-21-2",
+    "site": "产品站",
+    "module": "Profile 设定",
+    "point": "头像显示",
+    "steps": "查看头像",
+    "expected": "显示用户头像或默认占位",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-21-3",
+    "site": "产品站",
+    "module": "Profile 设定",
+    "point": "昵称编辑",
+    "steps": "点击编辑 → 修改昵称 → 保存",
+    "expected": "昵称更新成功",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-21-4",
+    "site": "产品站",
+    "module": "Profile 设定",
+    "point": "User ID",
+    "steps": "查看",
+    "expected": "正确显示",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-21-5",
+    "site": "产品站",
+    "module": "Profile 设定",
+    "point": "Email",
+    "steps": "查看",
+    "expected": "正确显示",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-21-6",
+    "site": "产品站",
+    "module": "Profile 设定",
+    "point": "积分",
+    "steps": "查看",
+    "expected": "和 Header 一致",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-21-7",
+    "site": "产品站",
+    "module": "Profile 设定",
+    "point": "当前套餐（Free）",
+    "steps": "Free 用户点击",
+    "expected": "弹出升级弹窗",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-21-8",
+    "site": "产品站",
+    "module": "Profile 设定",
+    "point": "当前套餐（付费）",
+    "steps": "付费用户点击",
+    "expected": "弹出积分购买弹窗",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-21-9",
+    "site": "产品站",
+    "module": "Profile 设定",
+    "point": "修改密码",
+    "steps": "输入旧密码+新密码+确认 → 提交",
+    "expected": "密码修改成功",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-21-10",
+    "site": "产品站",
+    "module": "Profile 设定",
+    "point": "密码校验",
+    "steps": "新密码不合规/确认不一致",
+    "expected": "显示对应错误",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-21-11",
+    "site": "产品站",
+    "module": "Profile 设定",
+    "point": "删除账号",
+    "steps": "点击删除账号",
+    "expected": "确认弹窗 确认后账号删除",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-22-1",
+    "site": "产品站",
+    "module": "My Creations",
+    "point": "Video Tab",
+    "steps": "点击 Video",
+    "expected": "显示视频创作列表（瀑布流）",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-22-2",
+    "site": "产品站",
+    "module": "My Creations",
+    "point": "Image Tab",
+    "steps": "点击 Image",
+    "expected": "显示图片创作列表",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-22-3",
+    "site": "产品站",
+    "module": "My Creations",
+    "point": "无限滚动",
+    "steps": "滚动到底部",
+    "expected": "自动加载更多",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-22-4",
+    "site": "产品站",
+    "module": "My Creations",
+    "point": "视频预览",
+    "steps": "点击视频卡片",
+    "expected": "全屏视频播放",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-22-5",
+    "site": "产品站",
+    "module": "My Creations",
+    "point": "图片预览",
+    "steps": "点击图片卡片",
+    "expected": "全屏图片查看",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-22-6",
+    "site": "产品站",
+    "module": "My Creations",
+    "point": "下载",
+    "steps": "点击下载按钮",
+    "expected": "视频下载为.mp4 图片下载为原格式",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-22-7",
+    "site": "产品站",
+    "module": "My Creations",
+    "point": "删除",
+    "steps": "点击删除按钮",
+    "expected": "确认弹窗 → 删除成功",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-22-8",
+    "site": "产品站",
+    "module": "My Creations",
+    "point": "重新生成",
+    "steps": "点击重新生成",
+    "expected": "跳转到对应生成页 参数回填",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-22-9",
+    "site": "产品站",
+    "module": "My Creations",
+    "point": "生成中状态",
+    "steps": "有正在生成的任务",
+    "expected": "显示进度状态 每15秒轮询更新",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-23-1",
+    "site": "产品站",
+    "module": "支付流程",
+    "point": "升级弹窗",
+    "steps": "点击 Upgrade",
+    "expected": "显示 Max/Pro/Lite 三个套餐",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-23-2",
+    "site": "产品站",
+    "module": "支付流程",
+    "point": "月/年切换",
+    "steps": "切换 Monthly/Yearly",
+    "expected": "价格正确变化",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-23-5",
+    "site": "产品站",
+    "module": "支付流程",
+    "point": "积分购买",
+    "steps": "付费用户点积分 → 选择积分包 → Buy",
+    "expected": "跳转结账",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-23-6",
+    "site": "产品站",
+    "module": "支付流程",
+    "point": "订阅管理",
+    "steps": "UserMenu → Manage Subscription",
+    "expected": "显示当前订阅状态/到期时间",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-24-1",
+    "site": "产品站",
+    "module": "多语言通用",
+    "point": "8 种语言切换",
+    "steps": "逐个切换语言",
+    "expected": "页面内容全部切换 无英文残留",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-24-2",
+    "site": "产品站",
+    "module": "多语言通用",
+    "point": "URL 前缀",
+    "steps": "切换到非英文语言",
+    "expected": "URL 带语言前缀（如 /zh-TW/app）",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-24-3",
+    "site": "产品站",
+    "module": "多语言通用",
+    "point": "英文无前缀",
+    "steps": "切回英文",
+    "expected": "URL 无前缀（/app）",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-24-4",
+    "site": "产品站",
+    "module": "多语言通用",
+    "point": "刷新保持语言",
+    "steps": "切换语言后刷新页面",
+    "expected": "语言保持不变",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-25-1",
+    "site": "产品站",
+    "module": "会员折扣校验",
+    "point": "Lite 视频折扣",
+    "steps": "Lite用户查看任意视频功能积分",
+    "expected": "显示积分为原价×0.7",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-25-2",
+    "site": "产品站",
+    "module": "会员折扣校验",
+    "point": "Pro 视频折扣",
+    "steps": "Pro用户查看任意视频功能积分",
+    "expected": "显示积分为原价×0.5",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-25-3",
+    "site": "产品站",
+    "module": "会员折扣校验",
+    "point": "Max 视频折扣",
+    "steps": "Max用户查看任意视频功能积分",
+    "expected": "显示积分为原价×0.3",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-25-4",
+    "site": "产品站",
+    "module": "会员折扣校验",
+    "point": "Lite 图片折扣",
+    "steps": "Lite用户查看图片功能积分",
+    "expected": "显示积分为原价×0.7",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-25-5",
+    "site": "产品站",
+    "module": "会员折扣校验",
+    "point": "Pro 图片折扣",
+    "steps": "Pro用户查看图片功能积分",
+    "expected": "显示积分为原价×0.5",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-25-6",
+    "site": "产品站",
+    "module": "会员折扣校验",
+    "point": "Max 图片折扣",
+    "steps": "Max用户查看图片功能积分",
+    "expected": "显示积分为原价×0.3",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "P-25-7",
+    "site": "产品站",
+    "module": "会员折扣校验",
+    "point": "Free 无折扣",
+    "steps": "Free用户查看积分",
+    "expected": "显示原价 无折扣",
+    "grade": "A",
+    "reason": "常规 UI 操作"
+  },
+  {
+    "id": "M-1-17",
+    "site": "营销站",
+    "module": "首页 /",
+    "point": "WhatsApp-打开方式",
+    "steps": "点击 Open WhatsApp Web / Open in App",
+    "expected": "分别跳转 web.whatsapp.com / wa.me",
+    "grade": "B",
+    "reason": "跳转到外部 WhatsApp"
+  },
+  {
+    "id": "M-5-5",
+    "site": "营销站",
+    "module": "页脚（通用）",
+    "point": "社交媒体链接",
+    "steps": "点击 YouTube/TikTok/X/Reddit/Pinterest",
+    "expected": "新标签页打开对应平台",
+    "grade": "B",
+    "reason": "新标签页打开"
+  },
+  {
+    "id": "P-20-6",
+    "site": "产品站",
+    "module": "新用户特惠弹窗",
+    "point": "Buy Now",
+    "steps": "点击 Buy Now",
+    "expected": "跳转到 checkout 结账页",
+    "grade": "B",
+    "reason": "跳转外部域"
+  },
+  {
+    "id": "P-23-3",
+    "site": "产品站",
+    "module": "支付流程",
+    "point": "Buy Now",
+    "steps": "点击 Buy Now",
+    "expected": "新标签页打开 checkout.visiva.ai",
+    "grade": "B",
+    "reason": "新标签页打开"
+  }
+]

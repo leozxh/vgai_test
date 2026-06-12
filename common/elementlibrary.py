@@ -43,10 +43,13 @@ class Login(Common):
 class AppPage(Common):
     """App 主页面元素定位器"""
 
-    # 页面主标题
+    # 页面主标题（SPA 无 h1，优先 document.title；此处作兜底 DOM 检测）
     MAIN_HEADING_LOCATORS = [
         (By.XPATH, "//h1[contains(., 'Visiva')]"),
+        (By.XPATH, "//h2[contains(., 'Visiva')]"),
         (By.CSS_SELECTOR, 'h1'),
+        (By.XPATH, "//*[contains(@class,'logo') or contains(@class,'brand')][contains(.,'Visiva')]"),
+        (By.CSS_SELECTOR, 'img[alt*="isiva"]'),
     ]
 
     # Hot Templates
