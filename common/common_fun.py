@@ -327,9 +327,9 @@ document.getElementById('toggleLogBtn').addEventListener('click', function() {{
             # 定义测试用例名称映射
             test_case_names = {
                 1: "test_01_app_load - 主页面加载测试",
-                2: "test_02_features_display - 功能入口显示测试",
-                3: "test_03_hot_templates - Hot Templates测试",
-                4: "test_04_upgrade_terms - Upgrade/Terms测试",
+                2: "test_02_features_display - 新版主导航显示测试",
+                3: "test_03_hot_templates - Hot/Models区域测试",
+                4: "test_04_upgrade_terms - 公司政策链接测试",
                 5: "test_05_nav_image_to_video - Image to Video导航",
                 6: "test_06_nav_text_to_video - Text to Video导航",
                 7: "test_07_nav_video_extend - Video Extend导航",

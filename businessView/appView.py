@@ -24,7 +24,9 @@ class AppView(AppPage):
             origin = f"{parsed.scheme}://{parsed.netloc}" if parsed.scheme and parsed.netloc else "https://visiva.ai"
             self.driver.get(origin + '/app')
             WebDriverWait(self.driver, 12).until(lambda d: '/app' in d.current_url)
-            self.find_one_fast(AppPage.HOT_TEMPLATES_LOCATORS, timeout=8)
+            # Hot/Models 内容来自异步数据，不能再作为首页加载完成标识。
+            # 使用新版稳定主导航路由确认 App shell 已就绪。
+            self.find_one_fast(AppPage.PRIMARY_NAV_LOCATORS['create'], timeout=12)
             return True
         except Exception as e:
             logging.error(f'访问 App 页面失败: {str(e)}')
@@ -42,26 +44,44 @@ class AppView(AppPage):
         except Exception:
             return False
 
-    def is_hot_templates_visible(self):
+    def is_hot_models_visible(self):
         try:
-            self.find_one_fast(AppPage.HOT_TEMPLATES_LOCATORS, timeout=5)
+            self.find_one_fast(AppPage.HOT_SECTION_LOCATORS, timeout=10)
+            self.find_one_fast(AppPage.MODELS_SECTION_LOCATORS, timeout=10)
             return True
-        except Exception:
+        except Exception as e:
+            logging.error(f'Hot/Models 区域验证失败: {str(e)}')
             return False
+
+    def is_primary_navigation_visible(self):
+        try:
+            for nav_name, locators in AppPage.PRIMARY_NAV_LOCATORS.items():
+                self.find_one_fast(locators, timeout=8)
+                logging.info(f'新版主导航已显示: {nav_name}')
+            return True
+        except Exception as e:
+            logging.error(f'新版主导航验证失败: {str(e)}')
+            return False
+
+    def are_company_policies_visible(self):
+        try:
+            for policy_name, locators in AppPage.COMPANY_POLICY_LOCATORS.items():
+                self.find_one_fast(locators, timeout=8)
+                logging.info(f'公司政策入口已显示: {policy_name}')
+            return True
+        except Exception as e:
+            logging.error(f'公司政策入口验证失败: {str(e)}')
+            return False
+
+    # 保留旧方法名，避免其他调用方在迁移期间报 AttributeError。
+    def is_hot_templates_visible(self):
+        return self.is_hot_models_visible()
 
     def is_upgrade_visible(self):
-        try:
-            self.find_one_fast(AppPage.UPGRADE_LOCATORS, timeout=5)
-            return True
-        except Exception:
-            return False
+        return self.is_primary_navigation_visible()
 
     def is_terms_visible(self):
-        try:
-            self.find_one_fast(AppPage.TERMS_LOCATORS, timeout=5)
-            return True
-        except Exception:
-            return False
+        return self.are_company_policies_visible()
 
     def are_features_visible(self):
         try:

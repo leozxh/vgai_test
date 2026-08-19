@@ -50,27 +50,31 @@ class AppPageTest(unittest.TestCase):
         logging.info('主页面加载测试完成')
 
     def test_02_features_display(self):
-        """功能入口显示测试"""
-        logging.info('开始功能入口显示测试')
-        self.app_view.go_to_app()
-        self.assertTrue(self.app_view.are_features_visible(),
-                        "应显示 Image to Video、Text to Video、Video Extend、AI Effects 四个入口")
-        logging.info('功能入口显示测试完成')
+        """新版主导航显示测试"""
+        logging.info('开始新版主导航显示测试')
+        self.assertTrue(self.app_view.go_to_app(), "App 首页加载失败")
+        self.assertTrue(
+            self.app_view.is_primary_navigation_visible(),
+            "应显示 Home、AI Effects、Create、Apps、Creations 主导航",
+        )
+        logging.info('新版主导航显示测试完成')
 
     def test_03_hot_templates_display(self):
-        """Hot Templates 区域测试"""
-        logging.info('开始 Hot Templates 区域测试')
-        self.app_view.go_to_app()
-        self.assertTrue(self.app_view.is_hot_templates_visible(), "应显示 Hot Templates 区域")
-        logging.info('Hot Templates 区域测试完成')
+        """新版 Hot/Models 区域测试"""
+        logging.info('开始 Hot/Models 区域测试')
+        self.assertTrue(self.app_view.go_to_app(), "App 首页加载失败")
+        self.assertTrue(self.app_view.is_hot_models_visible(), "应显示 Hot 和 Models 区域")
+        logging.info('Hot/Models 区域测试完成')
 
     def test_04_upgrade_terms_display(self):
-        """Upgrade 和 Terms 链接测试"""
-        logging.info('开始 Upgrade/Terms 链接测试')
-        self.app_view.go_to_app()
-        self.assertTrue(self.app_view.is_upgrade_visible(), "应显示 Upgrade")
-        self.assertTrue(self.app_view.is_terms_visible(), "应显示 Terms 链接")
-        logging.info('Upgrade/Terms 链接测试完成')
+        """新版公司政策链接测试"""
+        logging.info('开始公司政策链接测试')
+        self.assertTrue(self.app_view.go_to_app(), "App 首页加载失败")
+        self.assertTrue(
+            self.app_view.are_company_policies_visible(),
+            "应显示 Privacy Policy、Refund Policy、DMCA Policy 链接",
+        )
+        logging.info('公司政策链接测试完成')
 
     def test_05_nav_image_to_video(self):
         """Image to Video 导航测试"""

@@ -52,10 +52,53 @@ class AppPage(Common):
         (By.CSS_SELECTOR, 'img[alt*="isiva"]'),
     ]
 
-    # Hot Templates
+    # 新版首页主导航。优先使用路由定位，避免文案或语言变化导致误报。
+    PRIMARY_NAV_LOCATORS = {
+        'home': [
+            (By.CSS_SELECTOR, 'a[href="/app"], a[href$="/app"], a[href$="/app/"]'),
+        ],
+        'ai_effects': [
+            (By.CSS_SELECTOR, 'a[href*="/app/video-effects"]'),
+        ],
+        'create': [
+            (By.CSS_SELECTOR, 'a[href*="/app/image-to-video"]'),
+        ],
+        'apps': [
+            (By.CSS_SELECTOR, 'a[href*="/app/ai-tools"]'),
+        ],
+        'creations': [
+            (By.CSS_SELECTOR, 'a[href*="/app/creations"]'),
+        ],
+    }
+
+    # 新版首页内容区：原 Hot Templates 已调整为 Hot + Models。
+    HOT_SECTION_LOCATORS = [
+        (By.XPATH, "//*[self::h1 or self::h2 or self::h3][contains(normalize-space(.), 'Hot')]"),
+        (By.XPATH, "//*[contains(normalize-space(.), '🔥 Hot')]"),
+    ]
+
+    MODELS_SECTION_LOCATORS = [
+        (By.XPATH, "//*[self::h1 or self::h2 or self::h3][normalize-space(.)='Models']"),
+        (By.XPATH, "//button[contains(normalize-space(.), 'View All Models')]"),
+    ]
+
+    # 新版页脚公司政策入口（旧版 Upgrade/Terms 展示项已移除）。
+    COMPANY_POLICY_LOCATORS = {
+        'privacy': [
+            (By.CSS_SELECTOR, 'a[href*="privacy-policy"]'),
+        ],
+        'refund': [
+            (By.CSS_SELECTOR, 'a[href*="refund-policy"]'),
+        ],
+        'dmca': [
+            (By.CSS_SELECTOR, 'a[href*="dmca"]'),
+        ],
+    }
+
+    # 兼容仍使用该名称的其他测试逻辑。
     HOT_TEMPLATES_LOCATORS = [
-        (By.XPATH, "//h2[contains(., 'Hot Templates')]"),
-        (By.XPATH, "//*[contains(text(), 'Hot Templates')]"),
+        *HOT_SECTION_LOCATORS,
+        *MODELS_SECTION_LOCATORS,
     ]
 
     # Upgrade
