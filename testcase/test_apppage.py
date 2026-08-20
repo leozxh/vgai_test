@@ -44,7 +44,7 @@ class AppPageTest(unittest.TestCase):
     def test_01_app_load(self):
         """主页面加载测试"""
         logging.info('开始主页面加载测试')
-        self.app_view.go_to_app()
+        self.assertTrue(self.app_view.go_to_app(), "App 首页加载失败")
         self.assertIn("visiva", self.driver.current_url.lower())
         self.assertTrue(self.app_view.is_main_heading_visible(), "应显示 Visiva.AI 主标题")
         logging.info('主页面加载测试完成')

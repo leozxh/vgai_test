@@ -23,10 +23,18 @@ class AppView(AppPage):
             parsed = urlsplit(current)
             origin = f"{parsed.scheme}://{parsed.netloc}" if parsed.scheme and parsed.netloc else "https://visiva.ai"
             self.driver.get(origin + '/app')
-            WebDriverWait(self.driver, 12).until(lambda d: '/app' in d.current_url)
-            # Hot/Models 内容来自异步数据，不能再作为首页加载完成标识。
-            # 使用新版稳定主导航路由确认 App shell 已就绪。
-            self.find_one_fast(AppPage.PRIMARY_NAV_LOCATORS['create'], timeout=12)
+            WebDriverWait(self.driver, 20).until(
+                lambda d: '/app' in (d.current_url or '').lower()
+                and d.execute_script('return document.readyState') in ('interactive', 'complete')
+            )
+            # 首页内容和导航均由异步数据/响应式布局渲染，不能用某一个入口
+            # 作为整个 App 的加载标志。URL、品牌标题和 body 可见即可判定 shell 已就绪。
+            WebDriverWait(self.driver, 15).until(
+                lambda d: 'visiva' in (d.title or '').lower()
+                and bool(d.execute_script(
+                    "return document.body && document.body.innerText.trim().length > 0"
+                ))
+            )
             return True
         except Exception as e:
             logging.error(f'访问 App 页面失败: {str(e)}')

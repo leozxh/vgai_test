@@ -56,18 +56,23 @@ class AppPage(Common):
     PRIMARY_NAV_LOCATORS = {
         'home': [
             (By.CSS_SELECTOR, 'a[href="/app"], a[href$="/app"], a[href$="/app/"]'),
+            (By.XPATH, "//a[normalize-space(.)='Home']"),
         ],
         'ai_effects': [
             (By.CSS_SELECTOR, 'a[href*="/app/video-effects"]'),
+            (By.XPATH, "//a[contains(normalize-space(.), 'AI Effects')]"),
         ],
         'create': [
             (By.CSS_SELECTOR, 'a[href*="/app/image-to-video"]'),
+            (By.XPATH, "//a[normalize-space(.)='Create' or contains(normalize-space(.), 'Image to Video')]"),
         ],
         'apps': [
             (By.CSS_SELECTOR, 'a[href*="/app/ai-tools"]'),
+            (By.XPATH, "//a[normalize-space(.)='Apps']"),
         ],
         'creations': [
             (By.CSS_SELECTOR, 'a[href*="/app/creations"]'),
+            (By.XPATH, "//a[normalize-space(.)='Creations' or contains(normalize-space(.), 'My Creations')]"),
         ],
     }
 
