@@ -63,9 +63,19 @@ class AppView(AppPage):
 
     def is_primary_navigation_visible(self):
         try:
-            for nav_name, locators in AppPage.PRIMARY_NAV_LOCATORS.items():
+            required_navigation = ('home', 'ai_effects', 'create', 'creations')
+            for nav_name in required_navigation:
+                locators = AppPage.PRIMARY_NAV_LOCATORS[nav_name]
                 self.find_one_fast(locators, timeout=8)
                 logging.info(f'新版主导航已显示: {nav_name}')
+
+            # Apps/AI Tools 由后端展示面配置控制，可能在无可用工具时隐藏，
+            # 因此只记录当前状态，不作为首页健康检查的硬性条件。
+            try:
+                self.find_one_fast(AppPage.PRIMARY_NAV_LOCATORS['apps'], timeout=3)
+                logging.info('可选主导航已显示: apps')
+            except Exception:
+                logging.info('可选主导航未显示: apps（当前展示面允许隐藏）')
             return True
         except Exception as e:
             logging.error(f'新版主导航验证失败: {str(e)}')

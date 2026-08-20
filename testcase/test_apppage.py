@@ -55,7 +55,7 @@ class AppPageTest(unittest.TestCase):
         self.assertTrue(self.app_view.go_to_app(), "App 首页加载失败")
         self.assertTrue(
             self.app_view.is_primary_navigation_visible(),
-            "应显示 Home、AI Effects、Create、Apps、Creations 主导航",
+            "应显示 Home、AI Effects、Create、Creations 主导航",
         )
         logging.info('新版主导航显示测试完成')
 
