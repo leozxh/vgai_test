@@ -20,6 +20,7 @@ class AppSectionsTest(unittest.TestCase):
     def setUpClass(cls):
         options = webdriver.ChromeOptions()
         options.add_argument('--headless=new')
+        options.add_argument('--no-sandbox')
         cls.driver = webdriver.Chrome(options=options)
 
     @classmethod
