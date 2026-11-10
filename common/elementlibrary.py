@@ -76,10 +76,9 @@ class AppPage(Common):
         ],
     }
 
-    # 新版首页内容区：原 Hot Templates 已调整为 Hot + Models。
+    # 首页热门创作工具区以实际可见卡片为准，避免标题翻译或文案变化引起误报。
     HOT_SECTION_LOCATORS = [
-        (By.XPATH, "//*[self::h1 or self::h2 or self::h3][contains(normalize-space(.), 'Hot')]"),
-        (By.XPATH, "//*[contains(normalize-space(.), '🔥 Hot')]"),
+        (By.CSS_SELECTOR, '.home-hot-list a.home-hot-card h3'),
     ]
 
     MODELS_SECTION_LOCATORS = [

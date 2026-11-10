@@ -58,7 +58,7 @@ class AppView(AppPage):
             self.find_one_fast(AppPage.MODELS_SECTION_LOCATORS, timeout=10)
             return True
         except Exception as e:
-            logging.error(f'Hot/Models 区域验证失败: {str(e)}')
+            logging.error(f'创作工具卡片/Models 区域验证失败: {str(e)}')
             return False
 
     def is_primary_navigation_visible(self):

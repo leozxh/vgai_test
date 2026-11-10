@@ -60,11 +60,11 @@ class AppPageTest(unittest.TestCase):
         logging.info('新版主导航显示测试完成')
 
     def test_03_hot_templates_display(self):
-        """新版 Hot/Models 区域测试"""
-        logging.info('开始 Hot/Models 区域测试')
+        """创作工具卡片和 Models 区域测试"""
+        logging.info('开始创作工具卡片/Models 区域测试')
         self.assertTrue(self.app_view.go_to_app(), "App 首页加载失败")
-        self.assertTrue(self.app_view.is_hot_models_visible(), "应显示 Hot 和 Models 区域")
-        logging.info('Hot/Models 区域测试完成')
+        self.assertTrue(self.app_view.is_hot_models_visible(), "应显示创作工具卡片和 Models 区域")
+        logging.info('创作工具卡片/Models 区域测试完成')
 
     def test_04_upgrade_terms_display(self):
         """新版公司政策链接测试"""
